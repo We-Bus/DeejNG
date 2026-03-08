@@ -1,3 +1,57 @@
+# DeejNG – This forks adds the following things:
+
+⚠️ **This repository is a modified fork of the original DeejNG project.**  
+The goal of this fork is to support a custom-built hardware audio mixer with additional features and protocol changes.
+
+Original project: https://github.com/jimmyeao/DeejNG
+
+---
+
+## Changes in this Fork
+
+This fork introduces several modifications and additions compared to the upstream project.
+
+### Hardware Communication
+- Added **Raw HID communication** support for the mixer instead of relying on serial communication.
+- Implemented a **fixed-size HID report protocol** for low-latency communication between the Arduino and the desktop application.
+- Improved device detection based on **VID/PID**.
+
+### Hardware Controls
+- Support for **multiple sliders** controlling Windows audio sessions.
+- Added **button inputs** alongside sliders.
+- Button actions support:
+  - Short press
+  - Long press
+
+### Audio Control Features
+- Assign **multiple applications to a single channel**.
+- Toggle **mute for all applications in a channel** using a hardware button.
+- Ability to **assign the currently focused application** to a channel via button press.
+
+### Device Switching
+- Added ability to switch:
+  - **Default Windows audio output device**
+  - **Default Windows microphone device**
+
+### Internal Improvements
+- Refactored parts of the codebase to better separate:
+  - Hardware input handling
+  - Button action logic
+  - Audio session control
+- Added additional logging and debugging tools.
+
+---
+
+## Hardware Mixer Project
+
+This fork is part of a custom hardware project:  
+a **desktop audio mixer with physical sliders and buttons** that allows controlling application volumes and audio devices directly from hardware.
+
+The mixer communicates with the PC via **USB HID** and sends periodic reports containing slider and button states.
+
+---
+
+
 ![example workflow](https://github.com/jimmyeao/DeejNG/actions/workflows/codeql.yml/badge.svg)
 
 <p align="center">
