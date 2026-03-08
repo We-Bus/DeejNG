@@ -1,22 +1,26 @@
 # DeejNG – This forks adds the following things:
-
-⚠️ **This repository is a modified fork of the original DeejNG project.**  
 The goal of this fork is to add features that I'm looking for and where not in the original DeejNG project.
 
-⚠️ **Please note, this Fork has not been thoroughly tested. I have no idea how stable some of the things I've build are. Your mileage may vary**  
+---
+⚠️ 
+**This repository is a modified fork of the original DeejNG project.**  
+
+---
+⚠️ 
+**Please note, this Fork has not been thoroughly tested. I have no idea how stable some of the things I've build are, since some features are really bodged in there. Your mileage may vary**
+
+---
 
 Original project: https://github.com/jimmyeao/DeejNG
-
 ---
 
 ## Changes in this Fork
 
-This fork introduces several modifications and additions compared to the upstream project.
-
 ### Hardware Communication
 - Changed to **Raw HID communication** for the mixer instead of relying on serial communication.
-- Implemented a **fixed-size HID report protocol** that I find easier to work with.
-- Changed device detection based on **VID/PID**.
+- With HID we can now do device detection based on **VID/PID** which I prefer over COM port.
+- Implemented a **fixed-size HID report protocol** that I find easier to work with. I also made it so that the arduino only sends updates when there are new variables. This does break the smoothing volume feature so I would disable this in the settings.
+
 
 ### Hardware Controls
 - Added new button actions support:
